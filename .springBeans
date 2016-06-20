@@ -14,6 +14,13 @@
 		<config>resources/chapter2/namingbean4.xml</config>
 		<config>resources/chapter2/namingbean5.xml</config>
 		<config>resources/chapter2/instantiatingBean.xml</config>
+		<config>resources/chapter3/constructorDependencyInject.xml</config>
+		<config>resources/chapter3/staticFactoryDependencyInject.xml</config>
+		<config>resources/chapter3/instanceFactoryDependencyInject.xml</config>
+		<config>resources/chapter3/setterDependencyInject.xml</config>
+		<config>resources/chapter3/booleanInject.xml</config>
+		<config>resources/chapter3/idRefInject.xml</config>
+		<config>resources/chapter3/listInject.xml</config>
 	</configs>
 	<configSets>
 	</configSets>

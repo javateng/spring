@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="booleanBean" class="spring.seiya.chapter3.helloworld.BooleanTestBean" >
+<property  name="success" value="true"/>
+</bean>
+<!-- boolean参数值可以用on/off -->
+<bean id="booleanBean2" class="spring.seiya.chapter3.helloworld.BooleanTestBean">
+    <property name="success" value="on"/>
+</bean>
+<!-- boolean参数值可以用yes/no -->
+<bean id="booleanBean3" class="spring.seiya.chapter3.helloworld.BooleanTestBean">
+    <property name="success" value="yes"/>
+</bean>
+<!-- boolean参数值可以用1/0 -->
+<bean id="booleanBean4" class="spring.seiya.chapter3.helloworld.BooleanTestBean">
+    <property name="success" value="1"/>
+</bean>
+
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="instanceFactory" class="spring.seiya.chapter3.helloworld.DependencyInjectByInstanceFactory" />
+
+<bean id="byIndex" factory-bean="instanceFactory" factory-method="newInstance">
+<constructor-arg index="0" value="instanceFactory byIndex" />
+<constructor-arg index="1" value="1" />
+</bean>
+
+<bean id="byType" factory-bean="instanceFactory" factory-method="newInstance">
+<constructor-arg type="java.lang.String" value="instanceFactory byType" />
+<constructor-arg type="int" value="2" />
+</bean>
+
+<bean id="byName" factory-bean="instanceFactory" factory-method="newInstance">
+<constructor-arg name="message" value="instanceFactory byName" />
+<constructor-arg name="index" value="3" />
+</bean>
+
+
+</beans>
