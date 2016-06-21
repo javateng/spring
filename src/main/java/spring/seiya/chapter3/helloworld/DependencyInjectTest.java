@@ -2,6 +2,7 @@ package spring.seiya.chapter3.helloworld;
 
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import junit.framework.Assert;
@@ -99,5 +100,43 @@ public class DependencyInjectTest {
 		System.out.println(bean.getValues().size());
 		
 		Assert.assertEquals(3, bean.getValues().size());
+	}
+	
+	@Test
+	//
+	public void testBeanInject(){
+		BeanFactory beanFacotry= new ClassPathXmlApplicationContext("chapter3/beanInject.xml");
+		HelloApi bean1 = beanFacotry.getBean("bean1",HelloApi.class);
+		bean1.sayHello();
+		
+		HelloApi bean2 = beanFacotry.getBean("bean2",HelloApi.class);
+		bean2.sayHello();
+	}
+	
+	@Test
+	//
+	public void testLocalAndparentBeanInject(){
+		//初始化父容器
+		ApplicationContext parentFactory= new ClassPathXmlApplicationContext("chapter3/parentBeanInject.xml");
+		//初始化
+		ApplicationContext localFactory= new ClassPathXmlApplicationContext(new String[]{"chapter3/localBeanInject.xml"}, parentFactory);
+		
+		HelloApi bean1 = localFactory.getBean("bean1", HelloApi.class);
+		bean1.sayHello();
+		
+		HelloApi bean2 = localFactory.getBean("bean2", HelloApi.class);
+		bean2.sayHello();
+	}
+	
+	@Test
+	//内部Bean定义
+	public void testInnerBeanInject(){
+		BeanFactory beanFactory = new ClassPathXmlApplicationContext("chapter3/innerBeanInject.xml");
+		HelloApi bean1 = beanFactory.getBean("bean1", HelloApi.class);
+		bean1.sayHello();
+		
+		HelloApi bean2 = beanFactory.getBean("bean2", HelloApi.class);
+		bean2.sayHello();
+		
 	}
 }

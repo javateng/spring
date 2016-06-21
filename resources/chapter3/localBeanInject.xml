@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="helloApi" class="spring.seiya.chapter3.helloworld.HelloImpl4">
+<property name="message" value="hello local"/>
+<property name="index" value="1"/>
+</bean>
+
+<bean id="bean1" class="spring.seiya.chapter3.helloworld.HelloApiDecorator">
+<property name="helloApi"><ref parent="helloApi"></ref></property>
+</bean>
+
+<bean id="bean2" class="spring.seiya.chapter3.helloworld.HelloApiDecorator">
+<constructor-arg index="0"><ref local="helloApi"></ref></constructor-arg>
+</bean>
+
+</beans>

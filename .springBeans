@@ -21,6 +21,11 @@
 		<config>resources/chapter3/booleanInject.xml</config>
 		<config>resources/chapter3/idRefInject.xml</config>
 		<config>resources/chapter3/listInject.xml</config>
+		<config>resources/chapter3/beanInject.xml</config>
+		<config>resources/chapter3/parentBeanInject.xml</config>
+		<config>resources/chapter3/localBeanInject.xml</config>
+		<config>resources/chapter3/innerBeanInject.xml</config>
+		<config>resources/chapter3/printBeanInject.xml</config>
 	</configs>
 	<configSets>
 	</configSets>
